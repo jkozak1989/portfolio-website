@@ -1,11 +1,18 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 400;
-  color: azure;
-  background-color: var(--background-color);
+  color: var(--dbz-white);
+  background-color: var(--dbz-blue);
+
+  /* theme colors */
+  --dbz-blue: #1c4595;
+  --dbz-orange: #e76a24;
+  --dbz-black: #01060a;
+  --dbz-white: #e7e5eb;
+  --dbz-yellow: #fbbc42;
+  --card-background: rgba(231, 106, 36, 0.3);
 
   /* variables */
-  --background-color: #2f2f2f;
   --header-height: 3rem;
 }
 
@@ -17,4 +24,19 @@ body {
   margin: 0;
   height: 100%;
   width: 100%;
+  background: linear-gradient(-45deg, var(--dbz-black), var(--dbz-blue));
+  background-size: 300% 300%;
+  animation: gradient 10s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }

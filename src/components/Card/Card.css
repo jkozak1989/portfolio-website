@@ -1,0 +1,7 @@
+.card {
+  padding: 0.5rem;
+  border: 0.125rem solid var(--dbz-orange);
+  background-color: var(--card-background);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+}
