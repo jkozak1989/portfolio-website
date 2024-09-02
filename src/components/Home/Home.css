@@ -1,0 +1,17 @@
+.home {
+  column-gap: 2rem;
+
+  & .home-hero-text {
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+
+    & span {
+      color: var(--dbz-orange);
+    }
+  }
+
+  & .home-portrait {
+    border-radius: 50%;
+  }
+}

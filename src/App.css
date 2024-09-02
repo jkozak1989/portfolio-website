@@ -4,6 +4,7 @@
 }
 
 .content-wrapper {
+  padding: 0 10%;
   padding-top: var(--header-height);
   height: 100%;
   width: 100%;
