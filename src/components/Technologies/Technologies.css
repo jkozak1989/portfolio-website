@@ -1,0 +1,14 @@
+.technologies {
+  flex-direction: column;
+  row-gap: 1rem;
+
+  & .technologies-title {
+    font-size: 2rem;
+    color: var(--dbz-orange);
+  }
+
+  & .technologies-list {
+    display: flex;
+    column-gap: 0.5rem;
+  }
+}
