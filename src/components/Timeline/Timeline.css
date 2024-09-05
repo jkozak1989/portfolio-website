@@ -1,0 +1,138 @@
+.timeline {
+  --col-gap: 2rem;
+  --row-gap: 2rem;
+  --line-w: 0.25rem;
+  display: grid;
+  grid-template-columns: var(--line-w) 1fr;
+  grid-auto-columns: max-content;
+  column-gap: var(--col-gap);
+  list-style: none;
+  width: min(60rem, 90%);
+  margin-inline: auto;
+}
+
+/* line */
+.timeline::before {
+  content: "";
+  grid-column: 1;
+  grid-row: 1 / span 20;
+  background: rgb(225, 225, 225);
+  border-radius: calc(var(--line-w) / 2);
+}
+
+/* columns*/
+
+/* row gaps */
+.timeline li:not(:last-child) {
+  margin-bottom: var(--row-gap);
+}
+
+/* card */
+.timeline li {
+  grid-column: 2;
+  --inlineP: 1.5rem;
+  margin-inline: var(--inlineP);
+  grid-row: span 2;
+  display: grid;
+  grid-template-rows: min-content min-content min-content;
+}
+
+/* date */
+.timeline li .timeline-date {
+  --dateH: 2rem;
+  height: var(--dateH);
+  margin-inline: calc(var(--inlineP) * -1);
+  text-align: center;
+  background-color: var(--dbz-orange);
+  color: var(--dbz-white);
+  font-weight: 700;
+  display: grid;
+  place-content: center;
+  position: relative;
+  border-radius: calc(var(--dateH) / 2) 0 0 calc(var(--dateH) / 2);
+}
+
+/* date flap */
+.timeline li .timeline-date::before {
+  content: "";
+  width: var(--inlineP);
+  aspect-ratio: 1;
+  background: var(--dbz-orange);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2) 100%, transparent);
+  position: absolute;
+  top: 100%;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  right: 0;
+}
+
+/* circle */
+.timeline li .timeline-date::after {
+  content: "";
+  position: absolute;
+  width: 1.4rem;
+  aspect-ratio: 1;
+  background: var(--bgColor);
+  border: 0.3rem solid var(--dbz-orange);
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(50%, -50%);
+  right: calc(100% + var(--col-gap) + var(--line-w) / 2);
+}
+
+.timeline-card {
+  border-radius: 0;
+  border-top: none;
+}
+
+/* title descr */
+.timeline li .timeline-title,
+.timeline li .timeline-description {
+  padding-inline: 0.5rem;
+}
+
+.timeline li .timeline-title {
+  overflow: hidden;
+  padding-block-start: 1rem;
+  padding-block-end: 0.5rem;
+  font-weight: 700;
+  color: var(--dbz-white)
+}
+
+.timeline li .timeline-description {
+  padding-block-end: 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 300;
+}
+
+@media (min-width: 40rem) {
+  .timeline {
+    grid-template-columns: 1fr var(--line-w) 1fr;
+  }
+  .timeline::before {
+    grid-column: 2;
+  }
+  .timeline li:nth-child(odd) {
+    grid-column: 1;
+  }
+  .timeline li:nth-child(even) {
+    grid-column: 3;
+  }
+
+  /* start second card */
+  .timeline li:nth-child(2) {
+    grid-row: 2/4;
+  }
+
+  .timeline li:nth-child(odd) .timeline-date::before {
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    left: 0;
+  }
+
+  .timeline li:nth-child(odd) .timeline-date::after {
+    transform: translate(-50%, -50%);
+    left: calc(100% + var(--col-gap) + var(--line-w) / 2);
+  }
+  .timeline li:nth-child(odd) .timeline-date {
+    border-radius: 0 calc(var(--dateH) / 2) calc(var(--dateH) / 2) 0;
+  }
+}
