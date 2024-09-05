@@ -8,5 +8,21 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script src="./src/scripts/three.r134.min.js"></script>
+    <script src="./src/scripts/vanta.waves.min.js"></script>
+    <script>
+    VANTA.WAVES({
+      el: "body",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x1c4595,
+      shininess: 10.00
+    })
+    </script>
   </body>
 </html>
