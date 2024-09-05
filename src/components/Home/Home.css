@@ -1,17 +1,29 @@
 .home {
   column-gap: 2rem;
 
-  & .home-hero-text {
-    font-weight: 700;
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
+  & .home-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
 
-    & span {
-      color: var(--dbz-orange);
+    & .home-hero-text {
+      font-weight: 700;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+
+      & span {
+        color: var(--dbz-orange);
+      }
+    }
+
+    & .home-description {
+      font-size: 1.2rem;
+      max-width: 32rem;
     }
   }
 
   & .home-portrait {
+    max-width: 25rem;
     border-radius: 50%;
   }
 }

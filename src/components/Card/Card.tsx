@@ -9,5 +9,5 @@ type CardProps = {
 export const Card = (props: CardProps) => {
   const { className, children } = props;
 
-  return <section className={`card ${className ?? ''}`}>{children}</section>;
+  return <section className={`${className ?? ''} card`}>{children}</section>;
 };

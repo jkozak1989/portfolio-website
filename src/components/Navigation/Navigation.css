@@ -14,6 +14,8 @@
     box-sizing: border-box;
     border-bottom: 0.125rem solid transparent;
     cursor: default;
+    font-size: 1.25rem;
+    font-weight: 500;
   }
 
   & .navigation-item:hover {

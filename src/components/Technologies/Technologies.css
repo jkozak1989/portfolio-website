@@ -3,8 +3,10 @@
   row-gap: 1rem;
 
   & .technologies-title {
+    margin-top: 2rem;
     font-size: 2rem;
-    color: var(--dbz-orange);
+    font-weight: 700;
+    color: var(--dbz-white);
   }
 
   & .technologies-list {
